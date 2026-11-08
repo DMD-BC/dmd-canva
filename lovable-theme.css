@@ -1,0 +1,299 @@
+/* ==========================================================================
+   DMD Canva — Tema Lovable
+   Sobrescribe el tema corporativo oficial (style.css de www.dmdmx.dev)
+   con los colores de dmd-paginas-web-ia.vercel.app:
+   fondo crema #f7f4ed, Inter, degradado naranja #ff8a4c / rosa #f0467f /
+   azul #4f7dff, botones negros tipo píldora, tarjetas blancas.
+   Se carga DESPUÉS de style.css, así que sus reglas ganan.
+   NO toca el lienzo (#dmdDesignCanvas) ni los diseños generados
+   (.canva-tpl-*): esos se ven y funcionan exactamente igual.
+   ========================================================================== */
+
+/* --- Variables: crema + tinta + acentos Lovable --- */
+:root{
+  --bg-primary:#f7f4ed;
+  --bg-secondary:#f7f4ed;
+  --bg-tertiary:#f1eee6;
+  --bg-canvas-area:#f1eee6;
+
+  --card-bg:#fcfbf8;
+  --card-border:rgba(28,28,28,.08);
+  --card-border-hover:rgba(28,28,28,.16);
+  --card-border-strong:rgba(28,28,28,.28);
+
+  --text-main:#1c1c1c;
+  --text-body:#3d3d3a;
+  --text-muted:#5f5f5d;
+  --text-light:#8a8a86;
+
+  --primary:#1c1c1c;
+  --primary-hover:#000000;
+  --primary-dark:#000000;
+  --primary-light:#f7f4ed;
+  --primary-border:rgba(28,28,28,.12);
+
+  --accent:#f0467f;
+  --accent-hover:#d63a6e;
+  --accent-light:#fdeef3;
+
+  --lovable:#f0467f;
+  --lovable-hover:#d63a6e;
+  --lovable-light:#fdeef3;
+
+  --radius-sm:10px;
+  --radius-md:14px;
+  --radius-lg:16px;
+}
+
+/* --- Base --- */
+body{
+  background-color:#f7f4ed !important;
+  color:#1c1c1c;
+  font-family:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{letter-spacing:-.03em;}
+a{color:inherit;}
+
+/* --- Barra superior --- */
+header.navbar{
+  background:rgba(252,251,248,.88) !important;
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(28,28,28,.08);
+}
+.nav-link:hover{background:rgba(28,28,28,.05) !important;}
+.nav-link-lovable{
+  background:linear-gradient(135deg,#ff8a4c,#f0467f 55%,#4f7dff) !important;
+  border-color:transparent !important;
+  border-radius:9999px !important;
+}
+
+/* --- Encabezado (hero) con resplandor degradado Lovable --- */
+.spoke-header{
+  position:relative;
+  overflow:hidden;
+  background-color:#f7f4ed !important;
+  border-bottom:1px solid rgba(28,28,28,.08);
+}
+.spoke-header::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-32%;
+  width:130%;
+  height:85%;
+  transform:translateX(-50%);
+  pointer-events:none;
+  background:
+    radial-gradient(40% 55% at 30% 70%,rgba(255,138,76,.5),transparent 70%),
+    radial-gradient(38% 60% at 52% 80%,rgba(240,70,127,.45),transparent 70%),
+    radial-gradient(40% 55% at 74% 70%,rgba(79,125,255,.45),transparent 70%);
+  filter:blur(50px);
+  opacity:.8;
+}
+.spoke-header .container{position:relative;z-index:1;}
+.spoke-tag{
+  background:rgba(252,251,248,.85) !important;
+  color:#1c1c1c !important;
+  border-color:rgba(28,28,28,.08) !important;
+  box-shadow:0 0 0 1px rgba(28,28,28,.08);
+}
+.spoke-title{font-weight:700 !important;letter-spacing:-.04em !important;}
+.spoke-subtitle{color:#5f5f5d !important;}
+.breadcrumb-nav a{color:#5f5f5d;}
+.breadcrumb-item.active{color:#1c1c1c;}
+
+/* --- Botones: negros tipo píldora (Lovable) --- */
+.btn{border-radius:9999px !important;}
+.btn-primary,
+a.btn-primary,
+button.btn-primary{
+  background-color:#1c1c1c !important;
+  color:#fcfbf8 !important;
+  border-color:#1c1c1c !important;
+}
+.btn-primary:hover,
+a.btn-primary:hover,
+button.btn-primary:hover{background-color:#000000 !important;}
+.btn-secondary,
+a.btn-secondary,
+button.btn-secondary,
+label.btn-secondary{
+  background-color:#fcfbf8 !important;
+  color:#1c1c1c !important;
+  border-color:rgba(28,28,28,.14) !important;
+}
+.btn-secondary:hover,
+a.btn-secondary:hover,
+button.btn-secondary:hover{background-color:#ffffff !important;}
+.btn-lovable,
+a.btn-lovable{
+  background:linear-gradient(135deg,#ff8a4c,#f0467f 55%,#4f7dff) !important;
+  color:#ffffff !important;
+  border-color:transparent !important;
+}
+/* Botones Premium: de azul a negro píldora */
+.btn-subscribe-premium-nav{
+  background-color:#1c1c1c !important;
+  color:#fcfbf8 !important;
+  border-color:#1c1c1c !important;
+  border-radius:9999px !important;
+}
+.btn-dropdown-subscribe{
+  background-color:#1c1c1c !important;
+  color:#fcfbf8 !important;
+  border-color:#1c1c1c !important;
+  border-radius:9999px !important;
+}
+
+/* --- Etiquetas y badges: de azul a rosa Lovable --- */
+.badge-price{
+  background:#fdeef3 !important;
+  color:#d63a6e !important;
+  border-color:#fbcfe8 !important;
+}
+.studio-badge{
+  background:linear-gradient(135deg,#ff8a4c,#f0467f 55%,#4f7dff) !important;
+  border-radius:9999px !important;
+}
+.studio-status-pill,
+.inspector-badge{
+  background-color:#fdeef3 !important;
+  color:#d63a6e !important;
+  border-color:#fbcfe8 !important;
+}
+.section-tag{color:#d63a6e !important;}
+.section-title{font-weight:700 !important;letter-spacing:-.04em !important;}
+
+/* --- Secciones y tarjetas --- */
+.section-alt{
+  background-color:#f1eee6 !important;
+  border-bottom-color:rgba(28,28,28,.08) !important;
+}
+.card{
+  background-color:#fcfbf8 !important;
+  border:1px solid rgba(28,28,28,.08) !important;
+  border-radius:16px !important;
+  box-shadow:0 0 0 1px rgba(28,28,28,.06) !important;
+}
+
+/* --- Generador IA: panel oscuro -> panel claro Lovable ---
+   (solo el marco: los diseños generados dentro del escenario
+   y las tarjetas de la galería .canva-tpl-* no se tocan) */
+#canva-ia-section > .container > div:nth-child(2){
+  background:#fcfbf8 !important;
+  border-color:rgba(28,28,28,.08) !important;
+  box-shadow:0 0 0 1px rgba(28,28,28,.06),0 18px 40px -16px rgba(60,30,40,.25) !important;
+  color:#1c1c1c !important;
+}
+#canva-ia-section h2[style]{color:#1c1c1c !important;}
+#canva-ia-section span[style*="60a5fa"]{
+  background:rgba(240,70,127,.12) !important;
+  color:#d63a6e !important;
+  border-color:rgba(240,70,127,.35) !important;
+}
+/* Controles oscuros con estilo en línea -> claros */
+#canva-ia-section [style*="#1e293b"]{
+  background:#fcfbf8 !important;
+  color:#1c1c1c !important;
+  border-color:rgba(28,28,28,.14) !important;
+}
+#canva-ia-section [style*="#334155"]{border-color:rgba(28,28,28,.14) !important;}
+#canvaIaPrompt::placeholder{color:#8a8a86;}
+/* Escenario donde se muestra el diseño generado: fondo crema claro,
+   el diseño en sí (tarjeta blanca) queda intacto */
+#canvaIaStage{
+  background:#f1eee6 !important;
+  border-color:rgba(28,28,28,.1) !important;
+  box-shadow:0 14px 35px rgba(60,30,40,.16) !important;
+}
+
+/* --- Estudio: mesa de trabajo --- */
+.studio-container{
+  background-color:#fcfbf8 !important;
+  border-color:rgba(28,28,28,.08) !important;
+  border-radius:16px !important;
+  box-shadow:0 0 0 1px rgba(28,28,28,.06),0 18px 40px -16px rgba(60,30,40,.25) !important;
+}
+.studio-topbar{
+  background-color:#fcfbf8 !important;
+  border-bottom-color:rgba(28,28,28,.08) !important;
+}
+.studio-panel{background-color:#fcfbf8 !important;}
+/* Mesa punteada crema; el lienzo (tarjeta blanca) resalta como papel */
+.studio-panel-center{
+  background-color:#f1eee6 !important;
+  background-image:radial-gradient(rgba(28,28,28,.16) 1.2px,transparent 1.2px) !important;
+}
+.studio-artboard-card{
+  background-color:#ffffff !important;
+  border-color:rgba(28,28,28,.08) !important;
+  border-radius:8px !important;
+}
+.studio-btn-icon{
+  background-color:#fcfbf8 !important;
+  border-color:rgba(28,28,28,.1) !important;
+  border-radius:10px !important;
+  color:#1c1c1c !important;
+}
+.studio-btn-icon:hover:not(:disabled){background-color:#f7f4ed !important;}
+.studio-tile-btn,
+.shape-btn,
+.text-preset-btn{
+  background-color:#fcfbf8 !important;
+  border-color:rgba(28,28,28,.1) !important;
+  border-radius:12px !important;
+  color:#1c1c1c !important;
+}
+.studio-tile-btn:hover,
+.shape-btn:hover,
+.text-preset-btn:hover{
+  border-color:#f0467f !important;
+  box-shadow:0 0 0 1px #f0467f !important;
+}
+.studio-upload-box{
+  background-color:#f7f4ed !important;
+  border-color:rgba(28,28,28,.2) !important;
+  border-radius:12px !important;
+}
+.studio-upload-box:hover{border-color:#f0467f !important;}
+.panel-header-bar,
+.inspector-header{border-bottom-color:rgba(28,28,28,.08) !important;}
+.tool-group-title{color:#5f5f5d !important;}
+.studio-dock-tab{
+  background:#fcfbf8 !important;
+  border-color:rgba(28,28,28,.1) !important;
+  color:#1c1c1c !important;
+  border-radius:10px !important;
+}
+.studio-canvas-statusbar{
+  background:rgba(252,251,248,.95) !important;
+  border-color:rgba(28,28,28,.08) !important;
+  color:#5f5f5d !important;
+  border-radius:10px !important;
+}
+.studio-panel-toggle-btn{
+  background-color:#fcfbf8 !important;
+  border-color:rgba(28,28,28,.1) !important;
+  border-radius:10px !important;
+  color:#1c1c1c !important;
+}
+
+/* --- Pie de página --- */
+.footer{
+  background-color:#f7f4ed !important;
+  border-top:1px solid rgba(28,28,28,.08) !important;
+}
+
+/* --- Modales --- */
+.modal-content{
+  background-color:#fcfbf8 !important;
+  border-color:rgba(28,28,28,.08) !important;
+  border-radius:16px !important;
+}
+
+/* --- INTENCIONALMENTE SIN TOCAR ---
+   #dmdDesignCanvas y .canvas-container (lienzo Fabric.js),
+   .canva-tpl-* (tarjetas de diseños generados por canva-ia.js):
+   los diseños del usuario conservan sus propios colores. */
